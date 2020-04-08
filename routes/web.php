@@ -24,6 +24,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/member/{id}', 'MemberController@show')->name('member.show');
+Route::get('/member/{member}', 'MemberController@show')->name('member.show');
 
-Route::get('/librarian/{id}', 'LibrarianController@show')->name('librarian.show');
+Route::get('/librarian/{librarian}', 'LibrarianController@show')->name('librarian.show');
