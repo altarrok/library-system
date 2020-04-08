@@ -19,7 +19,8 @@ class LibrarianController extends Controller
      */
     public function index()
     {
-        //
+        $librarian = auth()->user()->librarian;
+        return view('librarian.index', compact('librarian'));
     }
 
     /**
@@ -51,7 +52,6 @@ class LibrarianController extends Controller
      */
     public function show(Librarian $librarian)
     {
-        return view('librarian.show', compact('librarian'));
     }
 
     /**

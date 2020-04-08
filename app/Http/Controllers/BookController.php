@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+
+    public function __construct() {
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +28,6 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -80,6 +83,5 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
     }
 }

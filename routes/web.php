@@ -24,12 +24,15 @@ Auth::routes();
 
 Route::get('/librarian/book', 'LibrarianBookController@index')->name('librarian.book.index');
 Route::get('/librarian/member', 'LibrarianMemberController@index')->name('librarian.member.index');
+Route::get('/librarian/book/return/{book}', 'LibrarianBookController@return')->name('librarian.book.return');
 
-Route::delete('/book/{book}', 'BookController@destroy')->name('book.destroy');
+Route::delete('/librarian/book/{book}', 'LibrarianBookController@destroy')->name('librarian.book.destroy');
+Route::get('/librarian/book/create', 'LibrarianBookController@create')->name('librarian.book.create');
+Route::post('/librarian/book', 'LibrarianBookController@store')->name('librarian.book.store');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/member/{member}', 'MemberController@show')->name('member.show');
+Route::get('/member', 'MemberController@index')->name('member.index');
 
-Route::get('/librarian/{librarian}', 'LibrarianController@show')->name('librarian.show');
+Route::get('/librarian', 'LibrarianController@index')->name('librarian.index');
 

@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $member = auth()->user()->member;
+        return view('member.index', compact('member'));
     }
 
     /**
@@ -46,7 +52,6 @@ class MemberController extends Controller
      */
     public function show(Member $member)
     {
-        //
     }
 
     /**
