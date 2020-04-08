@@ -22,11 +22,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/librarian/book', 'LibrarianBookController@index')->name('librarian.book.index');
+Route::get('/librarian/member', 'LibrarianMemberController@index')->name('librarian.member.index');
+
+Route::delete('/book/{book}', 'BookController@destroy')->name('book.destroy');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/member/{member}', 'MemberController@show')->name('member.show');
 
 Route::get('/librarian/{librarian}', 'LibrarianController@show')->name('librarian.show');
 
-Route::get('/librarian/{librarian}/book', 'LibrarianBookController@index')->name('librarian.book.index');
-Route::get('/librarian/{librarian}/member', 'LibrarianMemberController@index')->name('librarian.member.index');
