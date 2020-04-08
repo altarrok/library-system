@@ -46,7 +46,7 @@ class LibrarianController extends Controller
      */
     public function show(Librarian $librarian)
     {
-        //
+        return view('librarian.show', compact('librarian'));
     }
 
     /**
