@@ -8,6 +8,8 @@ class Book extends Model
 {
     //
 
+    protected $guarded = [];
+
     public function librarian() {
         return $this->belongsTo(Librarian::class);
     }

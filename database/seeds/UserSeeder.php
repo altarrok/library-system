@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
         factory(User::class, 10)->create()->each(function ($user) {
             $user->librarian()->save(factory(\App\Librarian::class)->make());
             $user->member()->save(factory(\App\Member::class)->make());
+            $user->librarian->books()->save(factory(Book::class)->make());
         });
     }
 }
