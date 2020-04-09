@@ -40,6 +40,7 @@ class LibrarianBookController extends Controller
     public function return(Book $book) {
         if ($book->member) {
             $book->member()->dissociate();
+            $book->taken_at = null;
             $book->save();
         }
         return Redirect::back();
